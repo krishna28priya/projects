@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conference Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 10s ease-out;
+  }
+
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+
+  </style>
+  
+</head>
+<body class="bg-white">
+<!-- 
+  <!-- Background Wrapper -->
+  <div class="min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('./images/back.jpg');">
+    
+    <!-- Navbar -->
+    <header class="w-full fixed top-0 z-50 bg-white bg-opacity-90 shadow">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-1">
+        <div class="flex justify-between items-center py-4">
+
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <img src="./images/logo3.png" alt="Logo" class="h-12 w-auto">
+            <span class="text-2xl font-bold  text-blue-900">Conference Connect</span>
+    
+
+          </div>
+
+          <!-- Nav links (Desktop) -->
+          <nav class="hidden md:flex space-x-6 text-gray-800 font-medium items-center">
+            <ul class="hidden md:flex space-x-6">
+            <div class="relative group">
+              <button class="hover:text-blue-700 underline-offset-4 hover:underline flex items-center">
+                Home
+                <svg class="h-4 w-4 ml-1  text-gray-400 group-hover:text-blue-500 transition-transform  duration-300 transform  group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+              </button>
+                
+              
+            </div>
+
+            <div class="relative group">
+              <button class="hover:text-blue-700 underline-offset-4 hover:underline flex items-center">
+                About
+                <svg class="h-4 w-4 ml-1   text-gray-400 group-hover:text-blue-500 transition-transform  duration-300 transform  group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded min-w-[150px]">
+                <a href="#" class="block px-4 py-2   hover:text-blue-700 underline-offset-4 hover:underline">Our Mission</a>
+                <a href="#" class="block px-4 py-2    hover:text-blue-700 underline-offset-4 hover:underline">Team</a>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <button class="hover:text-blue-700 underline-offset-4 hover:underline flex items-center">
+                Speakers
+                <svg class="h-4 w-4 ml-1   text-gray-400 group-hover:text-blue-500 transition-transform  duration-300 transform  group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded min-w-[150px]">
+                <a href="#" class="block px-4 py-2   hover:text-blue-700 underline-offset-4 hover:underline">Keynotes</a>
+                <a href="#" class="block px-4 py-2   hover:text-blue-700 underline-offset-4 hover:underline">Panels</a>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <button class="hover:text-blue-700 underline-offset-4 hover:underline flex items-center">
+                Schedule
+                <svg class="h-4 w-4 ml-1   text-gray-400 group-hover:text-blue-500 transition-transform  duration-300 transform  group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded min-w-[150px]">
+                <a href="#" class="block px-4 py-2  hover:text-blue-700 underline-offset-4 hover:underline ">Agenda</a>
+                <a href="#" class="block px-4 py-2   hover:text-blue-700 underline-offset-4 hover:underline">Timeline</a>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <button class="hover:text-blue-700 underline-offset-4 hover:underline flex items-center">
+                Venue
+                <svg class="h-4 w-4 ml-1   text-gray-400 group-hover:text-blue-500 transition-transform  duration-300 transform  group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded min-w-[150px]">
+                <a href="#" class="block px-4 py-2   hover:text-blue-700 underline-offset-4 hover:underline">Location</a>
+                <a href="#" class="block px-4 py-2    hover:text-blue-700 underline-offset-4 hover:underline">Map</a>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <button class="hover:text-blue-700 underline-offset-4 hover:underline flex items-center">
+                Contact
+                <svg class="h-4 w-4 ml-1   text-gray-400 group-hover:text-blue-500 transition-transform  duration-300 transform  group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded min-w-[150px]">
+                <a href="#" class="block px-4 py-2   hover:text-blue-700 underline-offset-4 hover:underline">Support</a>
+                <a href="#" class="block px-4 py-2    hover:text-blue-700 underline-offset-4 hover:underline">Help</a>
+              </div>
+            </div>
+
+            <!-- Login & Sign Up Buttons -->
+            <a href="login.html" class="border border-blue-700 text-blue-700 px-4 py-1.5 rounded hover:bg-blue-700 hover:text-white">Login</a>
+            <a href="signup.html" class="bg-blue-700 text-white px-4 py-1.5 rounded hover:bg-blue-900">Sign Up</a>
+          </nav>
+
+          <!-- Mobile Toggle -->
+          <button id="menuToggle" class="md:hidden text-3xl">&#9776;</button>
+        </div>
+      </div>
+    </header> -->
+
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="md:hidden fixed top-0 left-0 w-64 h-full bg-white shadow transform -translate-x-full transition-transform z-50">
+      <div class="flex justify-between items-center p-4 border-b">
+        <span class="text-lg font-bold text-blue-900">Conference Connect</span>
+        <button id="closeMenu" class="text-2xl">&times;</button>
+      </div>
+      <nav class="flex flex-col p-4 space-y-2 text-gray-800 font-medium">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Speakers</a>
+        <a href="#">Schedule</a>
+        <a href="#">Venue</a>
+        <a href="#">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </nav>
+    </div>
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------- -->
+ <!-- Hero Section -->
+<section class="relative flex items-center justify-center h-screen pt-28 md:pt-32 bg-cover bg-center bg-no-repeat" style="background-image: url('./images/back.jpg');">
+  <div class="bg-black bg-opacity-50 absolute inset-0 z-0"></div> <!-- Dark overlay -->
+
+  <div class="relative z-10 text-center px-4 max-w-3xl">
+    <!-- Heading -->
+    <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight drop-shadow-xl opacity-0 translate-y-8 transition-all duration-1000">
+      Welcome to <span class="text-blue-400">Conference Connect</span>
+    </h1>
+
+    <!-- Subheading -->
+    <p id="hero-desc" class="mt-4 text-lg md:text-xl text-gray-200 leading-relaxed opacity-0 translate-y-8 transition-all duration-1000 delay-200">
+      Join global leaders, experts, and innovators for a transformative event focused on collaboration, learning, and growth.
+    </p>
+
+    <!-- Buttons -->
+    <div id="hero-buttons" class="mt-6 flex flex-col sm:flex-row gap-4 justify-center opacity-0 scale-95 transition-all duration-1000 delay-500">
+      <a href="#register" class="px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg shadow hover:bg-blue-800 transition duration-300">
+        Register Now
+      </a>
+      <a href="#learn-more" class="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow hover:bg-gray-100 transition duration-300">
+        Learn More
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+<!-- Speakers Section -->
+
+  <section class="py-16 px-4 md:px-20 bg-white  fade-in-section">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Meet Our Key Speakers</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <img src="./images/sp1.png" alt="Speaker 1" class="rounded mb-4">
+        <h3 class="text-xl font-semibold text-blue-800">Dr. Amelia Hart</h3>
+        <p class="text-sm mt-2">Renowned Education Reformer and TEDx speaker, advocating innovative learning methodologies worldwide.</p>
+      </div>
+      <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <img src="./images/SP2.png" alt="Speaker 2" class="rounded mb-4">
+        <h3 class="text-xl font-semibold text-blue-800">Prof. Rahul Mehta</h3>
+        <p class="text-sm mt-2">Professor at Stanford University, specializing in AI in Education and digital curriculum innovation.</p>
+      </div>
+      <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <img src="./images/sp3.jpg" alt="Speaker 3" class="rounded mb-4">
+        <h3 class="text-xl font-semibold text-blue-800">Ms. Linda Okafor</h3>
+        <p class="text-sm mt-2">Founder of EduConnect Africa, dedicated to bridging educational gaps through technology and collaboration.</p>
+      </div>
+    </div>
+  </section>
+<!-- ------------------------------------------------------------------------------------------------------------------- -->
+  <!-- Authors Section -->
+  <section class="py-16 px-4 md:px-20 bg-blue-50 fade-in-section">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Meet the Authors</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <img src="./images/a2.jpg" alt="Author 1" class="rounded mb-4">
+        <h3 class="text-xl font-semibold text-blue-800">Dr. Clara Zhou</h3>
+        <p class="text-sm mt-2">Author of "Digital Learning Age" and researcher in cognitive learning and virtual teaching practices.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <img src="./images/a1.jpg" alt="Author 2" class="rounded mb-4">
+        <h3 class="text-xl font-semibold text-blue-800">Mr. Jonathan Reyes</h3>
+        <p class="text-sm mt-2">Tech educator and writer focused on inclusive classroom technologies and online education tools.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <img src="./images/a3.jpg" alt="Author 3" class="rounded mb-4">
+        <h3 class="text-xl font-semibold text-blue-800">Prof. Sahana Iyer</h3>
+        <p class="text-sm mt-2">Published researcher on hybrid learning models and author of “Teaching in Tomorrow’s World.”</p>
+      </div>
+    </div>
+  </section>
+  <!-- --------------------------------------------------------------------------------------------------------------- -->
+  <!-- Why Attend Section -->
+   <section id="why-attend" class="py-16 bg-white fade-in-section">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-12">
+      Why Attend Conference Connect?
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-gray-700">
+      
+      <!-- Feature 1 -->
+      <div class="flex flex-col items-center transform transition duration-500 hover:scale-105 hover:shadow-xl bg-white p-6 rounded-lg">
+        <img src="https://img.icons8.com/color/96/star.png" alt="Networking" class="mb-4">
+        <h3 class="font-bold text-lg text-gray-900">Global Networking</h3>
+        <p class="text-sm">Meet experts, scholars, and professionals from around the world for collaboration and growth.</p>
+      </div>
+
+      <!-- Feature 2 -->
+        <div class="flex flex-col items-center transform transition duration-500 hover:scale-105 hover:shadow-xl bg-white p-6 rounded-lg">
+          <img src="https://img.icons8.com/color/96/classroom.png" alt="Workshops" class="mb-4">
+        <h3 class="font-bold text-lg text-gray-900">Hands-on Workshops</h3>
+        <p class="text-sm">Gain practical insights with interactive workshops led by industry leaders and educators.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="flex flex-col items-center transform transition duration-500 hover:scale-105 hover:shadow-xl bg-white p-6 rounded-lg">
+        <img src="https://img.icons8.com/color/96/trophy.png" alt="Recognition" class="mb-4">
+        <h3 class="font-bold text-lg text-gray-900">Awards & Recognition</h3>
+        <p class="text-sm">Stand out with paper presentations and receive awards, badges, and global recognition.</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="flex flex-col items-center transform transition duration-500 hover:scale-105 hover:shadow-xl bg-white p-6 rounded-lg">
+        <img src="https://img.icons8.com/color/96/online-support.png" alt="Accessibility" class="mb-4">
+        <h3 class="font-bold text-lg text-gray-900">Accessible & Inclusive</h3>
+        <p class="text-sm">Designed to be accessible for everyone with diverse learning and engagement formats.</p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="flex flex-col items-center transform transition duration-500 hover:scale-105 hover:shadow-xl bg-white p-6 rounded-lg">
+        <img src="https://img.icons8.com/color/96/play-button-circled.png" alt="Interactive" class="mb-4">
+        <h3 class="font-bold text-lg text-gray-900">Live Panels & Media</h3>
+        <p class="text-sm">Enjoy interactive panel discussions, live media streaming, and global Q&A sessions.</p>
+      </div>
+
+      <!-- Feature 6 -->
+        <div class="flex flex-col items-center transform transition duration-500 hover:scale-105 hover:shadow-xl bg-white p-6 rounded-lg">
+        <img src="https://img.icons8.com/color/96/voice-presentation.png" alt="Voice Over" class="mb-4">
+        <h3 class="font-bold text-lg text-gray-900">Keynote Speakers</h3>
+        <p class="text-sm">Learn from visionaries and keynote speakers shaping the future of research and industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- -------------------------------------------------------------------------------------------------------------------- -->
+  <!-- Student Section -->
+  <section class="py-16 px-4 md:px-20 bg-white fade-in-section">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Opportunities for Students</h2>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="./images/a1s1.jpg" alt="Students Collaboration" class="rounded shadow">
+      </div>
+      <div>
+        <p class="text-lg">At Conference Connect, students are empowered to grow personally and academically by collaborating with educators and experts from across the globe. Through our global platform, students gain access to a wide range of resources, mentorship programs, and community initiatives tailored to foster lifelong learning.</p>
+        <ul class="list-disc ml-6 mt-4 text-sm">
+          <li>Access to real-world research presentations and papers</li>
+          <li>Opportunities to engage in international forums</li>
+          <li>Networking with leading educators and institutions</li>
+          <li>Participation in student-led panels and innovation showcases</li>
+          <li>Scholarship resources and academic counseling</li>
+          <li>Collaborative learning spaces and student ambassador programs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------- -->
+
+  <!-- Live Classes Section -->
+  <section class="py-16 px-4 md:px-20 bg-blue-100 fade-in-section">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Interactive Live Classes</h2>
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="text-lg mb-6">Join our live sessions hosted by world-class speakers, authors, and educators to stay ahead in your learning journey. All sessions are recorded for future reference.</p>
+      <button class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800 transition">Explore Schedule</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-8 px-4 text-center">
+    <p>&copy; 2025 Conference Connect. All rights reserved.</p>
+    <p class="text-sm">Empowering education through global collaboration.</p>
+  </footer>
+  <!-- --------------------------------------------------------------------------------------- -->
+  <!-- Add in header section -->
+<button id="menuToggle" class="md:hidden text-white text-3xl absolute top-6 right-6 z-50">&#9776;</button>
+
+<!-- Mobile Navigation -->
+<div id="mobileNav" class="hidden fixed inset-0 bg-blue-900 text-white z-40 flex-col p-6 space-y-6 md:hidden">
+  <button id="menuClose" class="text-white text-2xl self-end">&times;</button>
+  <a href="#speakers" class="hover:underline">Speakers</a>
+  <a href="#authors" class="hover:underline">Authors</a>
+  <a href="#students" class="hover:underline">Students</a>
+  <a href="#live" class="hover:underline">Live Classes</a>
+  <a href="#footer" class="hover:underline">Contact</a>
+</div>
+
+
+</body>
+</html>
+
+
+      
+
+  
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
